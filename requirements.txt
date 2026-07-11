@@ -1,0 +1,11 @@
+fastapi
+uvicorn
+pydantic
+email-validator
+python-dotenv
+openai
+langgraph
+langchain
+langchain-openai
+rich
+httpx
