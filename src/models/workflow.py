@@ -36,4 +36,10 @@ class WorkflowState(BaseModel):
 
     reason: str | None = None
 
+    approved: bool = False
+
+    escalation_required: bool = False
+
+    review_notes: str | None = None
+
     audit_log: list[str] = Field(default_factory=list)
