@@ -32,4 +32,8 @@ class WorkflowState(BaseModel):
 
     next_action: str | None = None
 
+    assigned_team: str | None = None
+
+    reason: str | None = None
+
     audit_log: list[str] = Field(default_factory=list)
