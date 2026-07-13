@@ -4,12 +4,16 @@ from tools.logger import AuditLogger
 
 from worker.crm_worker import CRMWorker
 
+from tools.memory import MemoryTool
+
 
 def main():
+    
+    MemoryTool.initialize_database()
 
     lead = Lead(
         name="Rahul Sharma",
-        phone="9999999999",
+        phone="9876543210",
         email="rahul@gmail.com",
         company="ABC Pvt Ltd",
         business_type="Retail",
