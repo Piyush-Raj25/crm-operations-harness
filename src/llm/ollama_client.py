@@ -37,15 +37,20 @@ class OllamaClient:
 
             response.raise_for_status()
 
+        except requests.exceptions.HTTPError as e:
+         raise OllamaConnectionError(
+        f"Ollama returned an HTTP error: {e}"
+    ) from e
+
         except requests.exceptions.ConnectionError as e:
-            raise OllamaConnectionError(
-                "Unable to connect to Ollama. Is Ollama running?"
-            ) from e
+         raise OllamaConnectionError(
+        "Unable to connect to Ollama. Is Ollama running?"
+    ) from e
 
         except requests.exceptions.Timeout as e:
-            raise OllamaConnectionError(
-                "Ollama request timed out."
-            ) from e
+         raise OllamaConnectionError(
+        "Ollama request timed out."
+    ) from e
 
         try:
 

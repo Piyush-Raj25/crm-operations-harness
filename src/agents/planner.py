@@ -12,7 +12,7 @@ class PlannerAgent:
 
     def __init__(self, logger: AuditLogger):
         self.logger = logger
-        self.ai_planner = PlannerService()
+        self.ai_planner = PlannerService(logger)
 
     def plan(self, lead, state):
 
