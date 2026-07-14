@@ -7,7 +7,9 @@ class MemoryTool:
     Stores processed CRM leads in SQLite.
     """
 
-    DB_PATH = Path("database/crm.db")
+    from config.settings import DATABASE_PATH
+
+    DB_PATH = Path(DATABASE_PATH)
 
     @classmethod
     def initialize_database(cls):

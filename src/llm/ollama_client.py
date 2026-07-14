@@ -5,15 +5,19 @@ from llm.exceptions import (
     OllamaResponseError,
 )
 
+from config.settings import (
+    OLLAMA_MODEL,
+    OLLAMA_BASE_URL,
+)
 
 class OllamaClient:
     """
     Client for communicating with the local Ollama server.
     """
 
-    BASE_URL = "http://localhost:11434/api/generate"
+    BASE_URL = OLLAMA_BASE_URL
 
-    def __init__(self, model: str = "llama3.2:3b"):
+    def __init__(self, model: str = OLLAMA_MODEL):
        self.model = model
 
     def generate(self, prompt: str) -> str:

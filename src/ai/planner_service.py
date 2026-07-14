@@ -4,6 +4,10 @@ from llm.parser import LLMParser
 
 from tools.retry import Retry
 from tools.logger import AuditLogger
+from config.settings import (
+    MAX_RETRIES,
+    RETRY_DELAY,
+)
 
 
 class PlannerService:
