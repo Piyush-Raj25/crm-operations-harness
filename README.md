@@ -195,3 +195,23 @@ Workflow completed successfully.
 - Asynchronous workflow execution
 - Dashboard for workflow analytics
 - Confidence-based escalation
+
+---
+
+# Harness Mapping
+
+Although this project does not directly use OpenClaw or Hermes Agent, it follows the same autonomous worker principles.
+
+| Harness Concept | Implementation |
+|-----------------|----------------|
+| Worker | CRMWorker |
+| Agents | ValidatorAgent, AnalyzerAgent, PlannerAgent, ReviewerAgent |
+| Tools | DuplicateChecker, MemoryTool, Retry, AuditLogger |
+| Workflow State | WorkflowState |
+| Memory | SQLite |
+| Retry Strategy | Retry Utility |
+| Audit Trail | AuditLogger |
+| AI Runtime | Ollama (Llama 3.2) |
+| Fallback Strategy | Deterministic rule-based planner |
+
+The architecture has been intentionally designed so that the current CRMWorker could later be replaced by an agent runtime such as OpenClaw, Hermes Agent, or LangGraph with minimal changes to the business logic.
